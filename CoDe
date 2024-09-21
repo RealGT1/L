@@ -1,0 +1,60 @@
+import pandas as pd
+from fuzzywuzzy import process
+
+# Debugging: Starting the script
+print("Starting the script...")
+
+# Load the two Excel files
+file_1_path = r'C:\Users\SHREYAS P\Desktop\1.xlsx'
+file_2_path = r'C:\Users\SHREYAS P\Desktop\2.xlsx'
+
+# Debugging: Loading Excel files
+print(f"Loading Excel files:\n- File 1: {file_1_path}\n- File 2: {file_2_path}")
+
+# Reading the sheets in both files
+file_1 = pd.read_excel(file_1_path)
+file_2 = pd.read_excel(file_2_path)
+
+# Debugging: Display the first few rows of both files
+print("First 5 rows of File 1:")
+print(file_1.head())
+print("First 5 rows of File 2:")
+print(file_2.head())
+
+# Extract relevant columns from both files
+file_1_isin_desc = file_1['ISIN_DESCRIPTION']
+file_2_names = file_2['name']
+
+# Debugging: Confirming the number of rows being processed
+print(f"Number of rows in File 1: {len(file_1_isin_desc)}")
+print(f"Number of rows in File 2: {len(file_2_names)}")
+
+# Define a function to get the best match from file 2 based on ISIN_DESCRIPTION from file 1
+def get_best_match(isin_desc):
+    best_match = process.extractOne(isin_desc, file_2_names)
+    # Debugging: Display the match information for the current row
+    print(f"Matching ISIN_DESCRIPTION: '{isin_desc}' | Best match: '{best_match[0]}' | Score: {best_match[1]}")
+    return best_match
+
+# Debugging: Start fuzzy matching process
+print("Starting fuzzy matching process...")
+
+# Apply the function to each ISIN_DESCRIPTION in file 1 to find the best match from file 2
+file_1['best_match_name'], file_1['match_score'] = zip(*file_1_isin_desc.apply(get_best_match))
+
+# Debugging: Display the first few rows of the result after matching
+print("Fuzzy matching completed. Displaying first 5 rows of results:")
+print(file_1[['ISIN_DESCRIPTION', 'best_match_name', 'match_score']].head())
+
+# Select only relevant columns to display the result (ISIN_DESCRIPTION, best match, and score)
+result = file_1[['ISIN_DESCRIPTION', 'best_match_name', 'match_score']]
+
+# Optionally, save the result to a new Excel file
+result_file = r'C:\Users\SHREYAS P\Desktop\matched_result.xlsx'
+result.to_excel(result_file, index=False)
+
+# Debugging: Confirming result saved
+print(f"Result saved to: {result_file}")
+
+# Display the result
+print("Process completed.")
