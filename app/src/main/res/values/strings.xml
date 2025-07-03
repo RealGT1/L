@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Jewellery Billing</string>
+    <string name="rate_input_title">Enter Today\'s Rates</string>
+    <string name="gold_rate">Gold Rate (per gram)</string>
+    <string name="silver_rate">Silver Rate (per gram)</string>
+    <string name="continue_button">Continue</string>
+    <string name="add_gold_item">Add Gold Item</string>
+    <string name="add_silver_item">Add Silver Item</string>
+    <string name="item_name">Item Name/ID</string>
+    <string name="weight">Weight (grams)</string>
+    <string name="quantity">Quantity</string>
+    <string name="making_charge">Making Charge</string>
+    <string name="add_item">Add Item</string>
+    <string name="cancel">Cancel</string>
+    <string name="silver_total">Silver Total</string>
+    <string name="gold_total">Gold Total</string>
+    <string name="grand_total">Grand Total</string>
+    <string name="generate_bill">Generate Bill</string>
+    <string name="bill_summary">Bill Summary</string>
+    <string name="silver_items">Silver Items</string>
+    <string name="gold_items">Gold Items</string>
+    <string name="new_bill">New Bill</string>
+    <string name="total_weight">Total Weight</string>
+    <string name="wastage">Wastage (10%)</string>
+    <string name="final_weight">Final Weight</string>
+    <string name="price_calculation">Price Calculation</string>
+    <string name="invalid_rate">Please enter a valid rate</string>
+    <string name="invalid_input">Please fill all required fields</string>
+</resources>
