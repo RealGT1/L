@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Jewellery Calculator</string>
+    <string name="material_selection_title">Select Material</string>
+    <string name="gold">Gold</string>
+    <string name="silver">Silver</string>
+    <string name="rate_input_label">Current Rate per gram</string>
+    <string name="weight_input_label">Weight (grams)</string>
+    <string name="making_charge_label">Making Charge</string>
+    <string name="calculate_price">Calculate Price</string>
+    <string name="final_price">Final Price: ₹%s</string>
+    <string name="item_selection_label">Select Item</string>
+    <string name="add_new_item">Add New Item</string>
+    <string name="item_name_label">Item Name</string>
+    <string name="add_item">Add Item</string>
+    <string name="wastage_info">Wastage (10%%) will be added automatically</string>
+    <string name="back">Back</string>
+    <string name="calculation_formula">Formula: (Weight + 10%% Wastage) × Rate + Making Charge</string>
+    <string name="new_item_dialog_title">Add New Item</string>
+    <string name="cancel">Cancel</string>
+    <string name="save">Save</string>
+    <string name="empty_field_error">This field cannot be empty</string>
+    <string name="invalid_number_error">Please enter a valid number</string>
+</resources>
